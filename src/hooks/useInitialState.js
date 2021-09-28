@@ -49,9 +49,17 @@ const useInitialState = () => {
     });
   };
 
+  const removeAllFromCart = () => {
+    setState({
+      ...state,
+      cart: [],
+    });
+  };
+
   return {
     addToCart,
     removeFromCart,
+    removeAllFromCart,
     addToBuyer,
     addNewOrder,
     state,

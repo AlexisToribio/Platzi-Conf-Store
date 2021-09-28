@@ -7,7 +7,7 @@ import pass from '../pass';
 import '../styles/components/Payment.css';
 
 function Payment() {
-  const { state, addNewOrder } = useContext(AppContext);
+  const { state, addNewOrder, removeAllFromCart } = useContext(AppContext);
   const { cart, buyer } = state;
   const history = useHistory();
   const clientID = pass.paypalPaymentClientID;
@@ -32,6 +32,7 @@ function Payment() {
       };
       addNewOrder(newOrder);
       history.push('/checkout/success');
+      removeAllFromCart();
     }
   };
 
